@@ -1,0 +1,378 @@
+{
+	"tree" : {
+		"nodeName" : "Status",
+		"name" : "",
+		"type" : "type1",
+		"definition" : "",
+		"label" : "",
+		"version" : "v1.0",
+		"link" : {
+				"name" : "Link NODE NAME 1",
+				"nodeName" : "NODE NAME 1",
+				"direction" : "ASYN"
+			},
+		"children" : [{
+				"nodeName" : "Pillar 1",
+				"name" : "Healthy Diets",
+				"type" : "type2",
+				"definition" : "Healthy Diets",
+				"code" : "N1.1",
+				"label" : "%",
+				"version" : "v1.0",
+				"link" : {
+						"name" : "Link node 1 to 1.1",
+						"nodeName" : "NODE NAME 1.1",
+						"direction" : "SYNC"
+					},
+				"children" : [{
+						"nodeName" : "Indicator",
+						"name" : "Species diversity",
+						"type" : "type2",
+						"definition" : "Species diversity",
+						"code" : "N1.1.1",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.1 to 1.1.1",
+								"nodeName" : "NODE NAME 1.1.1",
+								"direction" : "SYNC"
+							},
+						"children" : [{
+							"nodeName" : "Measurement S13",
+							"name" : "Gamma diversity (Shannon Index)",
+							"type" : "type2",
+							"definition" : "Species diversity in diets",
+							"code" : "N1.1.1.1",
+							"label" : "NA",
+							"version" : "v1.0",
+							"link" : {
+									"name" : "Link node 1.1.1 to 1.1.1.1",
+									"nodeName" : "NODE NAME 1.1.1.1",
+									"direction" : "SYNC"
+								},
+						"children" : []
+						},{
+							"nodeName" : "Measurement S15",
+							"name" : "Energy from non-cereals and starches",
+							"type" : "type2",
+							"definition" : "Sub-utilized/ local crops",
+							"code" : "N1.1.1.2",
+							"label" : "kcal/cap/day",
+							"version" : "v1.0",
+							"link" : {
+									"name" : "Link node 1.1.1 to 1.1.1.2",
+									"nodeName" : "NODE NAME 1.1.1.2",
+									"direction" : "SYNC"
+								},
+							"children" : []
+						}
+					]
+			},{
+						"nodeName" : "Indicator",
+						"name" : "Functional diversity",
+						"type" : "type2",
+						"definition" : "Functional diversity",
+						"code" : "N1.1.2",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.1 to 1.1.2",
+								"nodeName" : "NODE NAME 1.2.2",
+								"direction" : "SYNC"
+							},
+						"children" : [{
+							"nodeName" : "Measurement S21",
+							"name" : "Disability-Adjusted Life Year (DALY) attributable to dietary risks",
+							"type" : "type2",
+							"definition" : "Nutritional functional diversity in diets",
+							"code" : "N1.1.2.1",
+							"label" : "years lost",
+							"version" : "v1.0",
+							"link" : {
+									"name" : "Link node 1.1.2 to 1.1.2.1",
+									"nodeName" : "NODE NAME 1.1.2.1",
+									"direction" : "SYNC"
+								},
+						"children" : []
+					}
+				]
+			}
+			]
+			}, {
+				"nodeName" : "Pillar 2",
+				"name" : "Sustainable Agriculture",
+				"type" : "type5",
+				"definition" : "Sustainable Agriculture",
+				"code" : "N1.2",
+				"label" : "%",
+				"version" : "v1.0",
+				"link" : {
+						"name" : "Link node 1 to 1.2",
+						"nodeName" : "NODE NAME 1.2",
+						"direction" : "ASYN"
+					},
+				"children" : [{
+						"nodeName" : "Indicator",
+						"name" : "Landscape complexity",
+						"type" : "type5",
+						"definition" : "Landscape complexity",
+						"code" : "N1.3.1",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.2 to 1.2.1",
+								"nodeName" : "NODE NAME 1.2.1",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S04",
+								"name" : "Agricultural landscapes with at least 10% natural land",
+								"type" : "type5",
+								"definition" : "Landscape complexity",
+								"code" : "N1.2.1.1",
+								"label" : "%",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.2.1 to 1.2.1.1",
+										"nodeName" : "NODE NAME 1.2.1.1",
+										"direction" : "SYNC"
+									},
+								"children" : []
+							}
+						]
+					}, {
+						"nodeName" : "Indicator",
+						"name" : "Soil biodiversity",
+						"type" : "type5",
+						"definition" : "Soil biodiversity",
+						"code" : "N1.2.2",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.2 to 1.2.2",
+								"nodeName" : "NODE NAME 1.2.2",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S12",
+								"name" : "Potential soil biodiversity index",
+								"type" : "type5",
+								"definition" : "Potential soil biodiversity index",
+								"code" : "N1.2.2.1",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.2.2 to 1.2.2.1",
+										"nodeName" : "NODE NAME 1.2.2.1",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Indicator",
+						"name" : "Species biodiversity",
+						"type" : "type5",
+						"definition" : "Species biodiversity",
+						"code" : "N1.2.3",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.2 to 1.2.3",
+								"nodeName" : "NODE NAME 1.2.3",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S16",
+								"name" : "Pixels of agricultural land with more than 22 crops (FAO threshold on global harvested crops = 44/country)",
+								"type" : "type5",
+								"definition" : "Highly crop diverse areas",
+								"code" : "N1.2.3.1",
+								"label" : "%",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.2.3 to 1.2.3.1",
+										"nodeName" : "NODE NAME 1.2.3.1",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							},{
+								"nodeName" : "Measurement S17",
+								"name" : "Average Shannon Index on harvested area across 175 crops",
+								"type" : "type5",
+								"definition" : "Species diversity in production",
+								"code" : "N1.2.3.2",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.2.3 to 1.2.3.2",
+										"nodeName" : "NODE NAME 1.2.3.2",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							},{
+								"nodeName" : "Measurement S18",
+								"name" : "Reported number of harvested crops",
+								"type" : "type5",
+								"definition" : "Species richness in production",
+								"code" : "N1.2.3.3",
+								"label" : "crops",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.2.3 to 1.2.3.3",
+										"nodeName" : "NODE NAME 1.2.3.3",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Pillar 3",
+				"name" : "Current & Future Options",
+				"type" : "type8",
+				"definition" : "Current & Future Options",
+				"code" : "N1.3",
+				"label" : "%",
+				"version" : "v1.0",
+				"link" : {
+						"name" : "Link node 1 to 1.3",
+						"nodeName" : "NODE NAME 1.3",
+						"direction" : "ASYN"
+					},
+				"children" : [{
+						"nodeName" : "Indicator",
+						"name" : "Underutilized/ local crops",
+						"type" : "type8",
+						"definition" : "Underutilized/ local crops",
+						"code" : "N1.3.1",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.3 to 1.3.1",
+								"nodeName" : "NODE NAME 1.3.1",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S10",
+								"name" : "Gamma diversity (Gini-Simpson Index)",
+								"type" : "type8",
+								"definition" : "Neglected and underutilized species diversity in intertropical regions",
+								"code" : "N1.3.1.1",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.1 to 1.3.1.1",
+										"nodeName" : "NODE NAME 1.3.1.1",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							},{
+								"nodeName" : "Measurement S19",
+								"name" : "In-situ conservation representativeness",
+								"type" : "type8",
+								"definition" : "In-situ conservation representativeness",
+								"code" : "N1.3.1.2",
+								"label" : "%",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.1 to 1.3.1.2",
+										"nodeName" : "NODE NAME 1.3.1.2",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							},{
+								"nodeName" : "Measurement S20",
+								"name" : "Ex-situ conservation representativeness",
+								"type" : "type8",
+								"definition" : "Ex-situ conservation representativeness",
+								"code" : "N1.3.1.3",
+								"label" : "%",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.1 to 1.3.1.3",
+										"nodeName" : "NODE NAME 1.3.1.3",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Indicator",
+						"name" : "Species diversity",
+						"type" : "type8",
+						"definition" : "Species diversity",
+						"code" : "N1.3.2",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.3 to 1.3.2",
+								"nodeName" : "NODE NAME 1.3.2",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S05",
+								"name" : "Diversity of crop wild relative species based on occurence data",
+								"type" : "type8",
+								"definition" : "Crop wild relative species diversity",
+								"code" : "N1.3.2.1",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.2 to 1.3.2.1",
+										"nodeName" : "NODE NAME 1.3.2.1",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							},{
+								"nodeName" : "Measurement S14",
+								"name" : "Gamma diversity of species in gene bank based on accession records (Gini-Simpson Index)",
+								"type" : "type8",
+								"definition" : "Species diversity in gene bank accessions",
+								"code" : "N1.3.2.2",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.2 to 1.3.2.2",
+										"nodeName" : "NODE NAME 1.3.2.2",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Indicator",
+						"name" : "Varietal diversity",
+						"type" : "type8",
+						"definition" : "Varietal diversity",
+						"code" : "N1.3.3",
+						"label" : "NA",
+						"version" : "v1.0",
+						"link" : {
+								"name" : "Link node 1.3 to 1.3.3",
+								"nodeName" : "NODE NAME 1.3.3",
+								"direction" : "ASYN"
+							},
+						"children" : [{
+								"nodeName" : "Measurement S02",
+								"name" : "Gamma diversity of varieties in gene bank based on accession records",
+								"type" : "type8",
+								"definition" : "Varietal diversity in gene bank accessions",
+								"code" : "N1.3.3.1",
+								"label" : "NA",
+								"version" : "v1.0",
+								"link" : {
+										"name" : "Link node 1.3.3 to 1.3.3.1",
+										"nodeName" : "NODE NAME 1.3.3.1",
+										"direction" : "ASYN"
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}	
+		]
+	}
+}
