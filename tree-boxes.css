@@ -67,7 +67,7 @@
 }
 
 .link text {
-	font: 7px sans-serif;
+	font: 1vw sans-serif;
 	fill: #CC0000;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .node-text {
-	font: 7px sans-serif;
+	font: 1vw sans-serif;
 	color: white;
 }
 
@@ -91,7 +91,7 @@
 
 .tooltip-text {
 	visibility: hidden;
-	font: 7px sans-serif;
+	font: 1vw sans-serif;
 	color: white;
 	display: block;
  	padding: 5px;
