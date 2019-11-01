@@ -94,7 +94,7 @@
 	font: 1vw sans-serif;
 	color: white;
 	display: block;
- 	padding: 5px;
+ 	padding: 5px,5px,5px,5px;
 }
 
 .tooltip-box {
