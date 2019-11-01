@@ -240,9 +240,9 @@ function treeBoxes(urlService, jsonData)
                     return '<div style="width: '
                             + (rectNode.width - rectNode.textMargin * 2) + 'px; height: '
                             + (rectNode.height - rectNode.textMargin * 2) + 'px;" class="node-text wordwrap">'
-                            + '<b>' + d.nodeName + '</b></div>'
+                            + '<b>' + d.nodeName + ': </b>'
                             //+ '<b>Definition: </b>'
-                            + '<div>'+d.definition
+                            + d.definition
                             //+ '<b>Version: </b>' + d.version + '<br>'
                             + '</div>';
                 })
