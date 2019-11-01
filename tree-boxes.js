@@ -51,8 +51,8 @@ function treeBoxes(urlService, jsonData)
         width = 800 - margin.right - margin.left,
         height = 400 - margin.top - margin.bottom;
  
-    var rectNode = { width : 150, height : 45, textMargin : 5 },
-        tooltip = { width : 150, height : 40, textMargin : 5 };
+    var rectNode = { width : 150, height : 70, textMargin : 5 },
+        tooltip = { width : 150, height : 60, textMargin : 5 };
     var i = 0,
         duration = 750,
         root;
@@ -240,9 +240,9 @@ function treeBoxes(urlService, jsonData)
                     return '<div style="width: '
                             + (rectNode.width - rectNode.textMargin * 2) + 'px; height: '
                             + (rectNode.height - rectNode.textMargin * 2) + 'px;" class="node-text wordwrap">'
-                            + '<b>' + d.nodeName + '</b>'
+                            + '<b>' + d.nodeName + '</b></div>'
                             //+ '<b>Definition: </b>'
-                            + d.definition
+                            + '<div>'+d.definition
                             //+ '<b>Version: </b>' + d.version + '<br>'
                             + '</div>';
                 })
