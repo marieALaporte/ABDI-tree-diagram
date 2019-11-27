@@ -249,8 +249,12 @@ function treeBoxes(urlService, jsonData)
                             + '</div>';
                 })
         .on('mouseover', function(d) {
-            $('#nodeInfoID' + d.id).css('visibility', 'visible');
-            $('#nodeInfoTextID' + d.id).css('visibility', 'visible');
+            if(d.nodeName.indexOf("Pillar") == -1 && d.nodeName.indexOf("Indicator") == -1
+                    && d.type.indexOf("1") == -1 ){
+                $('#nodeInfoID' + d.id).css('visibility', 'visible');
+                $('#nodeInfoTextID' + d.id).css('visibility', 'visible');
+            }
+            
         })
         .on('mouseout', function(d) {
             $('#nodeInfoID' + d.id).css('visibility', 'hidden');
