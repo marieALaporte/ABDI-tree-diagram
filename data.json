@@ -27,7 +27,7 @@
 				"children" : [{
 						"nodeName" : "Indicator",
 						"name" : "Species diversity",
-						"type" : "type2",
+						"type" : "type3",
 						"definition" : "Species diversity",
 						"code" : "N1.1.1",
 						"label" : "NA",
@@ -38,12 +38,13 @@
 								"direction" : "SYNC"
 							},
 						"children" : [{
-							"nodeName" : "Measurement S13",
-							"name" : "Gamma diversity (Shannon Index)",
-							"type" : "type2",
+							"nodeName" : "Sub-indicator SP1I11_01",
+							"name" : "Diversity of species in supply per country, calculated from FAO food balance sheets using Shannon's diversity index",
+							"type" : "type4",
 							"definition" : "Species diversity in diets",
 							"code" : "N1.1.1.1",
-							"label" : "NA",
+							"label" : "Count",
+							"source" : "For countries, data obtained from Roseline Remans (pers. comm.). Original data source was FAO food balance sheets. For projects, data obtained from project team.",
 							"version" : "v1.0",
 							"link" : {
 									"name" : "Link node 1.1.1 to 1.1.1.1",
@@ -52,12 +53,13 @@
 								},
 						"children" : []
 						},{
-							"nodeName" : "Measurement S15",
-							"name" : "Energy from non-cereals and starches",
-							"type" : "type2",
-							"definition" : "Sub-utilized/ local crops",
+							"nodeName" : "Sub-indicator SP1I17_01",
+							"definition" : "Energy from non-cereals and starches",
+							"type" : "type4",
+							"name" : "FAO calculates the share of dietary energy supply derived from cereals, roots and tubers (kcal/cap/day) (3-year average). For the ABD Index, we calculate the share of dietary energy supply derived from sources other than cereals, roots and tubers (kcal/cap/day) (3-year average) as 100-FAO share",
 							"code" : "N1.1.1.2",
-							"label" : "kcal/cap/day",
+							"label" : "%",
+							"source" : "FAO food security indicators",
 							"version" : "v1.0",
 							"link" : {
 									"name" : "Link node 1.1.1 to 1.1.1.2",
@@ -70,7 +72,7 @@
 			},{
 						"nodeName" : "Indicator",
 						"name" : "Functional diversity",
-						"type" : "type2",
+						"type" : "type3",
 						"definition" : "Functional diversity",
 						"code" : "N1.1.2",
 						"label" : "NA",
@@ -81,12 +83,13 @@
 								"direction" : "SYNC"
 							},
 						"children" : [{
-							"nodeName" : "Measurement S21",
-							"name" : "Disability-Adjusted Life Year (DALY) attributable to dietary risks",
-							"type" : "type2",
+							"nodeName" : "Sub-indicator SP1I14_01",
+							"name" : "Number, age-standardized rates, and proportion of deaths and DALYs attributable todietary risks among adults at the global level in 1990 and 2017.",
+							"type" : "type4",
 							"definition" : "Nutritional functional diversity in diets",
 							"code" : "N1.1.2.1",
-							"label" : "years lost",
+							"label" : "Count",
+							"source": "Supplement to: GBD 2017 Diet Collaborators. Health effects of dietary risks in 195 countries, 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet 2019; published online April 3. http://dx.doi.org/10.1016/S0140-6736(19)30041-8.",
 							"version" : "v1.0",
 							"link" : {
 									"name" : "Link node 1.1.2 to 1.1.2.1",
@@ -125,12 +128,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S04",
-								"name" : "Agricultural landscapes with at least 10% natural land",
-								"type" : "type5",
-								"definition" : "Landscape complexity",
+								"nodeName" : "Sub-indicator SP2I22_01",
+								"name" : "This indicator is calculated using European Space Agency land use land cover maps rescaled to approximately 1 km x 1 km. Each pixel that contains at least 10% cropland is classified as an agricultural landscape. Each of the agricultural landscape pixels that contain at least 100 ha of natural land (i.e. all land types except urban or cropland areas) are classified as having at least 10% natural land. Mosaic cropland pixels were counted as 50% agricultural and 50% natural. The indicator reports the percentage of agricultural landscape pixels with at least 10% natural land.",
+								"type" : "type6",
+								"definition" : "Percentage of agricultural landscapes with at least 10% natural land",
 								"code" : "N1.2.1.1",
 								"label" : "%",
+								"source": "ESA CCI land use land cover map (2015)",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.2.1 to 1.2.1.1",
@@ -143,7 +147,7 @@
 					}, {
 						"nodeName" : "Indicator",
 						"name" : "Soil biodiversity",
-						"type" : "type5",
+						"type" : "type6",
 						"definition" : "Soil biodiversity",
 						"code" : "N1.2.2",
 						"label" : "NA",
@@ -154,12 +158,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S12",
-								"name" : "Potential soil biodiversity index",
-								"type" : "type5",
+								"nodeName" : "Sub-indicator SP2I21_01",
+								"name" : "Mean potential soil biodiversity index",
+								"type" : "type7",
 								"definition" : "Potential soil biodiversity index",
 								"code" : "N1.2.2.1",
-								"label" : "NA",
+								"label" : "Soil biodiversity index",
+								"source" : "JRC Global soil biodiversity map. Accessed at: https://esdac.jrc.ec.europa.eu/content/global-soil-biodiversity-maps-0#tabs-0-description=0&tabs-0-description-2=. Citation: Orgiazzi et al. (2016)",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.2.2 to 1.2.2.1",
@@ -172,7 +177,7 @@
 					},{
 						"nodeName" : "Indicator",
 						"name" : "Species biodiversity",
-						"type" : "type5",
+						"type" : "type6",
 						"definition" : "Species biodiversity",
 						"code" : "N1.2.3",
 						"label" : "NA",
@@ -183,12 +188,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S16",
-								"name" : "Pixels of agricultural land with more than 22 crops (FAO threshold on global harvested crops = 44/country)",
-								"type" : "type5",
-								"definition" : "Highly crop diverse areas",
+								"nodeName" : "Sub-indicator SP2I12_01",
+								"name" : "This indicator uses the SPAM (2010) 42 crop physical areas (a) dataset to calculate the number of crops in each cropped pixel. From FAO national crop production data we found the average harvested crop richness per country is 44. We use a threshold of 22 (i.e. half of the global average) as an indicator of diversified areas and then calculate the percentage of all cropped areas that are diversified in a country.",
+								"type" : "type7",
+								"definition" : "Percentage of agricultural land (pixels) with >= 22 crops",
 								"code" : "N1.2.3.1",
 								"label" : "%",
+								"source": "SPAM (2010), FAO national crop production data",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.2.3 to 1.2.3.1",
@@ -197,12 +203,13 @@
 									},
 								"children" : []
 							},{
-								"nodeName" : "Measurement S17",
-								"name" : "Average Shannon Index on harvested area across 175 crops",
-								"type" : "type5",
-								"definition" : "Species diversity in production",
+								"nodeName" : "Sub-indicator SP2I12_02",
+								"name" : "This indicator uses the SPAM (2010) 42 crop production areas to calculate the shannon index per pixel. We use the mean average value per country.",
+								"type" : "type7",
+								"definition" : "Average shannon index per country on harvested area across 42 crops",
 								"code" : "N1.2.3.2",
-								"label" : "NA",
+								"label" : "Dimensionless (larger values are better) ",
+								"source": "SPAM (2010)",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.2.3 to 1.2.3.2",
@@ -211,12 +218,13 @@
 									},
 								"children" : []
 							},{
-								"nodeName" : "Measurement S18",
-								"name" : "Reported number of harvested crops",
-								"type" : "type5",
+								"nodeName" : "Sub-indicator SP2I12_03",
+								"name" : "This indicator uses FAOSTAT crop production data to count the number of harvested crops per country in 2017 (the latest year) ",
+								"type" : "type7",
 								"definition" : "Species richness in production",
 								"code" : "N1.2.3.3",
-								"label" : "crops",
+								"label" : "Count",
+								"source": "FAOSTAT crop production data",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.2.3 to 1.2.3.3",
@@ -244,7 +252,7 @@
 				"children" : [{
 						"nodeName" : "Indicator",
 						"name" : "Underutilized/ local crops",
-						"type" : "type8",
+						"type" : "type9",
 						"definition" : "Underutilized/ local crops",
 						"code" : "N1.3.1",
 						"label" : "NA",
@@ -255,12 +263,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S10",
-								"name" : "Gamma diversity (Gini-Simpson Index)",
-								"type" : "type8",
-								"definition" : "Neglected and underutilized species diversity in intertropical regions",
+								"nodeName" : "Sub-indicator SP3I19_01",
+								"name" : "Diversity of neglected and under-utilized species per country, calculated from occurrences in inter-tropical regions.",
+								"type" : "type10",
+								"definition" : "NUS species diversity in intertropical regions",
 								"code" : "N1.3.1.1",
-								"label" : "NA",
+								"label" : "Count",
+								"source" : "Bioversity (Elizabeth Arnaud, Marc Deletre and Hannes Gainsberger in 2014 - unpublished)",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.1 to 1.3.1.1",
@@ -269,12 +278,13 @@
 									},
 								"children" : []
 							},{
-								"nodeName" : "Measurement S19",
-								"name" : "In-situ conservation representativeness",
-								"type" : "type8",
+								"nodeName" : "Sub-indicator SP3I19_02",
+								"name" : "This indicator represents the extent of species’ representation within protected areas. The indicator is composed by two subindicators. The first one (GRSin) is a geographic measurement that estimates the proportion of the species ranges within protected areas (i.e. species range within protected areas as a proportion of its total range). The second measure (ERSin) is an ecological measurement of the ecological variation of the species range overall and within protected areas. The final in-situ indicator values are calculated as (GRSin+ERSin)/2.",
+								"type" : "type10",
 								"definition" : "In-situ conservation representativeness",
 								"code" : "N1.3.1.2",
 								"label" : "%",
+								"source" : "Khoury, Colin K, Daniel Amariles, Jonatan Stivens, Maria Victoria, Steven Sotelo, Chrystian C Sosa, Julian Ramírez-villegas, et al. 2019. “Comprehensiveness of Conservation of Useful Wild Plants : An Operational Indicator for Biodiversity and Sustainable Development Targets.” Ecological Indicators 98 (June 2018). Elsevier: 420–29. doi:10.1016/j.ecolind.2018.11.016.",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.1 to 1.3.1.2",
@@ -283,12 +293,13 @@
 									},
 								"children" : []
 							},{
-								"nodeName" : "Measurement S20",
-								"name" : "Ex-situ conservation representativeness",
-								"type" : "type8",
+								"nodeName" : "Sub-indicator SP3I19_03",
+								"name" : "This indicator estimates the degree of representation of species in living plant conservation repositories. Three scores are used: the Sampling Representativeness Score (SRS), the Geographical Representativeness Score (GRSex), and the Ecological Representativeness Score (ERSex). (Khoury et al. 2019)",
+								"type" : "type10",
 								"definition" : "Ex-situ conservation representativeness",
 								"code" : "N1.3.1.3",
 								"label" : "%",
+								"source" : "Khoury, Colin K, Daniel Amariles, Jonatan Stivens, Maria Victoria, Steven Sotelo, Chrystian C Sosa, Julian Ramírez-villegas, et al. 2019. “Comprehensiveness of Conservation of Useful Wild Plants : An Operational Indicator for Biodiversity and Sustainable Development Targets.” Ecological Indicators 98 (June 2018). Elsevier: 420–29. doi:10.1016/j.ecolind.2018.11.016.",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.1 to 1.3.1.3",
@@ -301,7 +312,7 @@
 					},{
 						"nodeName" : "Indicator",
 						"name" : "Species diversity",
-						"type" : "type8",
+						"type" : "type9",
 						"definition" : "Species diversity",
 						"code" : "N1.3.2",
 						"label" : "NA",
@@ -312,12 +323,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S05",
-								"name" : "Diversity of crop wild relative species based on occurence data",
-								"type" : "type8",
+								"nodeName" : "Sub-indicator SP3I13_01",
+								"name" : "Gamma species diversity of crop wild relatives occurences, calculated with Gini-Simpson Index. We take the mean value per country.",
+								"type" : "type10",
 								"definition" : "Crop wild relative species diversity",
 								"code" : "N1.3.2.1",
-								"label" : "NA",
+								"label" : "Count",
+								"source" : "Sotelo H (2017). A global database for the distributions of crop wild relatives. Version 1.8. Centro Internacional de Agricultura Tropical (CIAT). Occurrence Dataset https://doi.org/10.15468/jyrthk accessed via GBIF.org on 2018-04-21.",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.2 to 1.3.2.1",
@@ -326,12 +338,13 @@
 									},
 								"children" : []
 							},{
-								"nodeName" : "Measurement S14",
-								"name" : "Gamma diversity of species in gene bank based on accession records (Gini-Simpson Index)",
-								"type" : "type8",
+								"nodeName" : "Sub-indicator SP3I13_02",
+								"name" : "Gamma diversity of species in gene banks, calculated from accession records. We take the mean value per country.",
+								"type" : "type10",
 								"definition" : "Species diversity in gene bank accessions",
 								"code" : "N1.3.2.2",
-								"label" : "NA",
+								"label" : "Count",
+								"source": "Genesys accession records (2018). Accessed at: https://www.genesys-pgr.org/explore",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.2 to 1.3.2.2",
@@ -344,7 +357,7 @@
 					},{
 						"nodeName" : "Indicator",
 						"name" : "Varietal diversity",
-						"type" : "type8",
+						"type" : "type9",
 						"definition" : "Varietal diversity",
 						"code" : "N1.3.3",
 						"label" : "NA",
@@ -355,12 +368,13 @@
 								"direction" : "ASYN"
 							},
 						"children" : [{
-								"nodeName" : "Measurement S02",
-								"name" : "Gamma diversity of varieties in gene bank based on accession records",
-								"type" : "type8",
+								"nodeName" : "Sub-indicator SP3I10_02",
+								"name" : "Gamma diversity of varieties in gene banks, calculated from accession records. We take the mean value per country.",
+								"type" : "type10",
 								"definition" : "Varietal diversity in gene bank accessions",
 								"code" : "N1.3.3.1",
-								"label" : "NA",
+								"label" : "Count",
+								"source" : "Genesys accession records (2018). Accessed at: https://www.genesys-pgr.org/explore",
 								"version" : "v1.0",
 								"link" : {
 										"name" : "Link node 1.3.3 to 1.3.3.1",

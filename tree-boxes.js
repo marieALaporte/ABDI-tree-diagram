@@ -51,8 +51,8 @@ function treeBoxes(urlService, jsonData)
         width = 800 - margin.right - margin.left,
         height = 400 - margin.top - margin.bottom;
  
-    var rectNode = { width : 150, height : 70, textMargin : 5 },
-        tooltip = { width : 150, height : 60, textMargin : 5 };
+    var rectNode = { width : 160, height : 80, textMargin : 5 }, //150 70
+        tooltip = { width : 180, height : 100, textMargin : 5 }; //150 60
     var i = 0,
         duration = 750,
         root;
@@ -137,9 +137,10 @@ function treeBoxes(urlService, jsonData)
         baseSvg = d3.select('#tree-container').append('svg')
         //.attr('width', width + margin.right + margin.left)
         //.attr('height', height + margin.top + margin.bottom)
-        .attr("viewBox", "0 0 1300 3000")
+        .attr("viewBox", "0 0 1500 2000")
             .classed("svg-content-responsive", true)
         .attr('class', 'svgContainer')
+        //.attr('transform', 'rotate(90 0 0)')
         .call(d3.behavior.zoom()
               //.scaleExtent([0.5, 1.5]) // Limit the zoom scale
               .on('zoom', zoomAndDrag));
@@ -171,6 +172,7 @@ function treeBoxes(urlService, jsonData)
         initArrowDef();
         initDropShadow();
         root.children.forEach(collapse);
+        expand(root);
         update(root);
     }
     // Collapse the node and all it's children
@@ -242,7 +244,7 @@ function treeBoxes(urlService, jsonData)
                     return '<div style="width: '
                             + (rectNode.width - rectNode.textMargin * 2) + 'px; height: '
                             + (rectNode.height - rectNode.textMargin * 2) + 'px;" class="node-text wordwrap">'
-                            + '<b>' + d.nodeName + ': </b>'
+                            + '<b>' + d.nodeName + ' </b>'
                             //+ '<b>Definition: </b>'
                             + d.definition
                             //+ '<b>Version: </b>' + d.version + '<br>'
@@ -263,6 +265,7 @@ function treeBoxes(urlService, jsonData)
  
         node.selectAll('rect')
              .attr("width", function(d) {return this.parentNode.getBBox().width;})
+             .attr("depth", function(d) {return this.parentNode.getBBox().depth;});
 
         nodeEnterTooltip.append("rect")
         .attr('id', function(d) { return 'nodeInfoID' + d.id; })
@@ -282,24 +285,46 @@ function treeBoxes(urlService, jsonData)
             $('#nodeInfoTextID' + d.id).css('visibility', 'hidden');
             reactivateMouseEvents();
         });
- 
-        nodeEnterTooltip.append("text")
-        .attr('id', function(d) { return 'nodeInfoTextID' + d.id; })
-        .attr('x', rectNode.width / 2 + tooltip.textMargin)
-        .attr('y', rectNode.height / 2 + tooltip.textMargin * 4)
-        .attr('width', tooltip.width)
-        .attr('height', tooltip.height)
-        .attr('class', 'tooltip-text')
-        .style('fill', 'white')
-        .append("tspan")
-        .text(function(d) {return 'Info: ' + d.name;})
-        .append("tspan")
-        .attr('x', rectNode.width / 2 + tooltip.textMargin)
-        .attr('dy', '1.5em')
-        .text(function(d) {return 'Unit: ' + d.label;});
 
-        nodesTooltip.selectAll('rect')
-             .attr("width", function(d) {return this.parentNode.getBBox().width+5;})
+        nodeEnterTooltip.append('foreignObject')
+        //.attr('id', function(d) { return 'nodeInfoTextID' + d.id; })
+        .attr('x', rectNode.width / 2 + tooltip.textMargin)
+        .attr('y', rectNode.height / 2 + tooltip.textMargin)
+        .attr('width', tooltip.width*2.5)
+        .attr('height', tooltip.height*1.4)
+        .append('xhtml').html(function(d) {
+                    return '<div id=nodeInfoTextID' + d.id + ' style="width: '
+                            + (tooltip.width*2.5 - rectNode.textMargin * 2) + 'px; height: '
+                            + (tooltip.height - rectNode.textMargin * 2) + 'px;" class="tooltip-text">'
+                            + '<div>'+ d.name + '</div>'
+                            + '<div>Unit: '+ d.label + '</div> '
+                            + '<div>Source: '+ d.source + '</div> '
+                            + '</div>';
+                })
+        .style('fill', 'white')
+ 
+        // nodeEnterTooltip.append("text")
+        // .attr('id', function(d) { return 'nodeInfoTextID' + d.id; })
+        // .attr('x', rectNode.width / 2 + tooltip.textMargin)
+        // .attr('y', rectNode.height / 2 + tooltip.textMargin * 4)
+        // .attr('width', tooltip.width)
+        // .attr('height', tooltip.height)
+        // .attr('class', 'tooltip-text')
+        // .style('fill', 'white')
+        // .append("tspan")
+        // .text(function(d) {return 'Info: ' + d.name;})
+        // .append("tspan")
+        // .attr('x', rectNode.width / 2 + tooltip.textMargin)
+        // .attr('dy', '1.5em')
+        // .text(function(d) {return 'Unit: ' + d.label;})
+        // .append("tspan")
+        // .attr('x', rectNode.width / 2 + tooltip.textMargin)
+        // .attr('dy', '1.5em')
+        // .text(function(d) {return 'Source: ' + d.source;});
+
+        nodeEnterTooltip.selectAll('rect')
+             .attr("width", function(d) {return this.parentNode.getBBox().width;})
+             .attr("height", function(d) {return this.parentNode.getBBox().height;});
  
         // Transition nodes to their new position.
         var nodeUpdate = node.transition().duration(duration)
@@ -321,7 +346,6 @@ function treeBoxes(urlService, jsonData)
         .remove();
  
         nodeExit.select('text').style('fill-opacity', 1e-6);
- 
  
     // 2) ******************* Update the links *******************
         var link = linkGroup.selectAll('path').data(links, function(d) {
@@ -572,6 +596,16 @@ function treeBoxes(urlService, jsonData)
             return [ d.y, d.x ];
         });
         return 'M' + p[0] + 'C' + p[1] + ' ' + p[2] + ' ' + p[3];
+    }
+
+    function expand(d){   
+        var children = (d.children)?d.children:d._children;
+        if (d._children) {        
+            d.children = d._children;
+            d._children = null;       
+        }
+        if(children)
+          children.forEach(expand);
     }
  
     function initDropShadow() {

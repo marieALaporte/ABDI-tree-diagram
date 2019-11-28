@@ -23,7 +23,7 @@
  */
 #tree-container {
 	position: absolute;
-	left: 0px;
+	left: 50px;
 	width: 100%;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .node-text {
-	font: 1vw sans-serif;
+	font: 15px sans-serif;
 	color: white;
 }
 
@@ -91,10 +91,10 @@
 
 .tooltip-text {
 	visibility: hidden;
-	font: 1vw sans-serif;
+	font: 15px sans-serif;
 	color: white;
 	display: block;
- 	padding: 5px,5px,5px,5px;
+ 	/*padding: 5px,5px,5px,5px;*/
 }
 
 .tooltip-box {
