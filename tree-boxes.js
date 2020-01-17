@@ -51,8 +51,8 @@ function treeBoxes(urlService, jsonData)
         width = 800 - margin.right - margin.left,
         height = 400 - margin.top - margin.bottom;
  
-    var rectNode = { width : 100, height : 210, textMargin : 5 }, //150 70
-        tooltip = { height : 180, width : 100, textMargin : 5 }; //150 60
+    var rectNode = { width : 160, height : 80, textMargin : 5 }, //150 70
+        tooltip = { width : 180, height : 100, textMargin : 5 }; //150 60
     var i = 0,
         duration = 750,
         root;
@@ -140,7 +140,7 @@ function treeBoxes(urlService, jsonData)
         .attr("viewBox", "0 0 1500 2000")
             .classed("svg-content-responsive", true)
         .attr('class', 'svgContainer')
-        .attr('transform', 'rotate(90 0 0)')
+        //.attr('transform', 'rotate(90 0 0)')
         .call(d3.behavior.zoom()
               //.scaleExtent([0.5, 1.5]) // Limit the zoom scale
               .on('zoom', zoomAndDrag));
@@ -241,12 +241,10 @@ function treeBoxes(urlService, jsonData)
                             : (rectNode.height - rectNode.textMargin * 2)
                 })
         .append('xhtml').html(function(d) {
-                    //return '<div style="width: '
-                    //return '<div style="writing-mode: sideways-lr;width: '
-                    return '<div class="verticaltext" style="'
-                            + 'height: ' + (rectNode.width - rectNode.textMargin * 2) + 'px; width: '
+                    return '<div style="width: '
+                            + (rectNode.width - rectNode.textMargin * 2) + 'px; height: '
                             + (rectNode.height - rectNode.textMargin * 2) + 'px;" class="node-text wordwrap">'
-                            + '<b>' + d.nodeName + ' </b><br />'
+                            + '<b>' + d.nodeName + ' </b>'
                             //+ '<b>Definition: </b>'
                             + d.definition
                             //+ '<b>Version: </b>' + d.version + '<br>'
